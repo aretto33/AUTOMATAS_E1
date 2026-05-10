@@ -1,4 +1,5 @@
 # Proyecto Becas
+Créditos a Iván por elaborar la base y esqueleto del Lexer.
 
 Lenguaje sencillo para probar reglas de becas con variables, ciclos, condiciones, entrada de datos y salidas por consola.
 
