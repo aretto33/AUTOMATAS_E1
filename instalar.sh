@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-echo "== Proyecto Becas =="
+echo "== Team1 =="
 echo "Revisando dependencias..."
 echo
 
@@ -38,12 +38,12 @@ if [ "$missing_dotnet" -eq 1 ]; then
 fi
 
 echo "Restaurando paquetes del proyecto..."
-dotnet restore "BecasApp/BecasApp.csproj"
+dotnet restore "Team1App/Team1App.csproj"
 
 echo
 echo "Listo."
 echo "Para ejecutar el programa:"
-echo 'dotnet run --project BecasApp/BecasApp.csproj -- codigo.becas'
+echo 'dotnet run --project Team1App/Team1App.csproj -- codigo.team1'
 
 if [ "$missing_java" -eq 1 ]; then
   echo

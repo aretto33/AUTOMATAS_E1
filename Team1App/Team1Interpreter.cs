@@ -2,20 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace BecasApp
+namespace Team1App
 {
-    class BecasInterpreter
+    class Team1Interpreter
     {
-        // Guarda el valor actual de cada variable del programa .becas.
+        // Guarda el valor actual de cada variable del programa .team1.
         private readonly Dictionary<string, double> variables = new Dictionary<string, double>();
 
-        public void Execute(BecasParser.Start_ruleContext program)
+        public void Execute(Team1Parser.Start_ruleContext program)
         {
             ExecuteInstructions(program.instrucciones());
         }
 
         // Recorre las instrucciones en el mismo orden en que aparecen en el archivo.
-        private void ExecuteInstructions(BecasParser.InstruccionesContext instructions)
+        private void ExecuteInstructions(Team1Parser.InstruccionesContext instructions)
         {
             foreach (var instruction in instructions.instruccion())
             {
@@ -23,7 +23,7 @@ namespace BecasApp
             }
         }
 
-        private void ExecuteInstruction(BecasParser.InstruccionContext instruction)
+        private void ExecuteInstruction(Team1Parser.InstruccionContext instruction)
         {
             // Cada instruccion viene del parser; aqui se decide que metodo la ejecuta.
             if (instruction.var_decl() != null)
@@ -56,7 +56,7 @@ namespace BecasApp
             }
         }
 
-        private void ExecuteVarDeclaration(BecasParser.Var_declContext declaration)
+        private void ExecuteVarDeclaration(Team1Parser.Var_declContext declaration)
         {
             // VAR a, b = 0 asigna el mismo valor inicial a todas las variables.
             double value = ParseNumber(declaration.numero().GetText());
@@ -67,13 +67,13 @@ namespace BecasApp
             }
         }
 
-        private void ExecuteAssignment(BecasParser.Input_datosContext assignment)
+        private void ExecuteAssignment(Team1Parser.Input_datosContext assignment)
         {
             string name = assignment.ID().GetText();
             variables[name] = ParseNumber(assignment.numero().GetText());
         }
 
-        private void ExecuteUserInput(BecasParser.Input_usuarioContext input)
+        private void ExecuteUserInput(Team1Parser.Input_usuarioContext input)
         {
             // INPUT muestra un mensaje y guarda en una variable el numero que escribe el usuario.
             string prompt = Unquote(input.STRING().GetText());
@@ -99,7 +99,7 @@ namespace BecasApp
             }
         }
 
-        private void ExecuteSumAssignment(BecasParser.Asignacion_sumaContext assignment)
+        private void ExecuteSumAssignment(Team1Parser.Asignacion_sumaContext assignment)
         {
             string target = assignment.ID().GetText();
             double left = EvaluateExpression(assignment.exp(0));
@@ -108,7 +108,7 @@ namespace BecasApp
             variables[target] = left + right;
         }
 
-        private void ExecuteLoop(BecasParser.Ciclo_loopContext loop)
+        private void ExecuteLoop(Team1Parser.Ciclo_loopContext loop)
         {
             // LOOP i IN range (5) ejecuta el bloque 5 veces y actualiza la variable i.
             string iteratorName = loop.ID().GetText();
@@ -121,7 +121,7 @@ namespace BecasApp
             }
         }
 
-        private void ExecuteCheck(BecasParser.Check_blockContext check)
+        private void ExecuteCheck(Team1Parser.Check_blockContext check)
         {
             // Ejecuta solo el primer bloque cuya condicion sea verdadera.
             if (EvaluateCondition(check.condicion()))
@@ -145,13 +145,13 @@ namespace BecasApp
             }
         }
 
-        private bool EvaluateCondition(BecasParser.CondicionContext condition)
+        private bool EvaluateCondition(Team1Parser.CondicionContext condition)
         {
             // La condicion se evalua respetando la prioridad definida en la gramatica.
             return EvaluateOrCondition(condition.or_cond());
         }
 
-        private bool EvaluateOrCondition(BecasParser.Or_condContext condition)
+        private bool EvaluateOrCondition(Team1Parser.Or_condContext condition)
         {
             foreach (var andCondition in condition.and_cond())
             {
@@ -164,7 +164,7 @@ namespace BecasApp
             return false;
         }
 
-        private bool EvaluateAndCondition(BecasParser.And_condContext condition)
+        private bool EvaluateAndCondition(Team1Parser.And_condContext condition)
         {
             foreach (var notCondition in condition.not_cond())
             {
@@ -177,7 +177,7 @@ namespace BecasApp
             return true;
         }
 
-        private bool EvaluateNotCondition(BecasParser.Not_condContext condition)
+        private bool EvaluateNotCondition(Team1Parser.Not_condContext condition)
         {
             // Permite negar condiciones con ! y agruparlas con parentesis.
             if (condition.OP_NOT() != null)
@@ -193,7 +193,7 @@ namespace BecasApp
             return EvaluateComparison(condition.comparacion());
         }
 
-        private bool EvaluateComparison(BecasParser.ComparacionContext comparison)
+        private bool EvaluateComparison(Team1Parser.ComparacionContext comparison)
         {
             double left = EvaluateExpression(comparison.exp(0));
             double right = EvaluateExpression(comparison.exp(1));
@@ -204,7 +204,7 @@ namespace BecasApp
                 : left >= right;
         }
 
-        private double EvaluateExpression(BecasParser.ExpContext expression)
+        private double EvaluateExpression(Team1Parser.ExpContext expression)
         {
             if (expression.ID() != null)
             {
@@ -214,7 +214,7 @@ namespace BecasApp
             return ParseNumber(expression.GetText());
         }
 
-        private void ExecuteOutput(BecasParser.SalidaContext output)
+        private void ExecuteOutput(Team1Parser.SalidaContext output)
         {
             // OUT imprime un valor, o concatena dos valores usando +.
             var values = output.valor_salida();
@@ -228,7 +228,7 @@ namespace BecasApp
             Console.WriteLine(text);
         }
 
-        private string FormatOutputValue(BecasParser.Valor_salidaContext value)
+        private string FormatOutputValue(Team1Parser.Valor_salidaContext value)
         {
             if (value.STRING() != null)
             {

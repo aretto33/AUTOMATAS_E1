@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from BecasParser.g4 by ANTLR 4.7.2
+// Generated from Team1Parser.g4 by ANTLR 4.7.2
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -32,7 +32,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.2")]
 [System.CLSCompliant(false)]
-public partial class BecasParser : Parser {
+public partial class Team1Parser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -77,44 +77,44 @@ public partial class BecasParser : Parser {
 		}
 	}
 
-	public override string GrammarFileName { get { return "BecasParser.g4"; } }
+	public override string GrammarFileName { get { return "Team1Parser.g4"; } }
 
 	public override string[] RuleNames { get { return ruleNames; } }
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static BecasParser() {
+	static Team1Parser() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
 		}
 	}
 
-		public BecasParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+		public Team1Parser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-		public BecasParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+		public Team1Parser(ITokenStream input, TextWriter output, TextWriter errorOutput)
 		: base(input, output, errorOutput)
 	{
 		Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
 	}
 
 	public partial class Start_ruleContext : ParserRuleContext {
-		public ITerminalNode START() { return GetToken(BecasParser.START, 0); }
+		public ITerminalNode START() { return GetToken(Team1Parser.START, 0); }
 		public InstruccionesContext instrucciones() {
 			return GetRuleContext<InstruccionesContext>(0);
 		}
-		public ITerminalNode END() { return GetToken(BecasParser.END, 0); }
+		public ITerminalNode END() { return GetToken(Team1Parser.END, 0); }
 		public Start_ruleContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_start_rule; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterStart_rule(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitStart_rule(this);
 		}
 	}
@@ -155,11 +155,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_instrucciones; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterInstrucciones(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitInstrucciones(this);
 		}
 	}
@@ -226,11 +226,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_instruccion; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterInstruccion(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitInstruccion(this);
 		}
 	}
@@ -299,18 +299,18 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Var_declContext : ParserRuleContext {
-		public ITerminalNode VAR() { return GetToken(BecasParser.VAR, 0); }
-		public ITerminalNode[] ID() { return GetTokens(BecasParser.ID); }
+		public ITerminalNode VAR() { return GetToken(Team1Parser.VAR, 0); }
+		public ITerminalNode[] ID() { return GetTokens(Team1Parser.ID); }
 		public ITerminalNode ID(int i) {
-			return GetToken(BecasParser.ID, i);
+			return GetToken(Team1Parser.ID, i);
 		}
-		public ITerminalNode OP_ASIG() { return GetToken(BecasParser.OP_ASIG, 0); }
+		public ITerminalNode OP_ASIG() { return GetToken(Team1Parser.OP_ASIG, 0); }
 		public NumeroContext numero() {
 			return GetRuleContext<NumeroContext>(0);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(BecasParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(Team1Parser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(BecasParser.COMMA, i);
+			return GetToken(Team1Parser.COMMA, i);
 		}
 		public Var_declContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -318,11 +318,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_var_decl; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterVar_decl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitVar_decl(this);
 		}
 	}
@@ -367,8 +367,8 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Input_datosContext : ParserRuleContext {
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
-		public ITerminalNode OP_ASIG() { return GetToken(BecasParser.OP_ASIG, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
+		public ITerminalNode OP_ASIG() { return GetToken(Team1Parser.OP_ASIG, 0); }
 		public NumeroContext numero() {
 			return GetRuleContext<NumeroContext>(0);
 		}
@@ -378,11 +378,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_input_datos; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterInput_datos(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitInput_datos(this);
 		}
 	}
@@ -411,20 +411,20 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Input_usuarioContext : ParserRuleContext {
-		public ITerminalNode INPUT() { return GetToken(BecasParser.INPUT, 0); }
-		public ITerminalNode STRING() { return GetToken(BecasParser.STRING, 0); }
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
+		public ITerminalNode INPUT() { return GetToken(Team1Parser.INPUT, 0); }
+		public ITerminalNode STRING() { return GetToken(Team1Parser.STRING, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
 		public Input_usuarioContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_input_usuario; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterInput_usuario(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitInput_usuario(this);
 		}
 	}
@@ -453,26 +453,26 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Asignacion_sumaContext : ParserRuleContext {
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
-		public ITerminalNode OP_ASIG() { return GetToken(BecasParser.OP_ASIG, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
+		public ITerminalNode OP_ASIG() { return GetToken(Team1Parser.OP_ASIG, 0); }
 		public ExpContext[] exp() {
 			return GetRuleContexts<ExpContext>();
 		}
 		public ExpContext exp(int i) {
 			return GetRuleContext<ExpContext>(i);
 		}
-		public ITerminalNode OP_ARIT() { return GetToken(BecasParser.OP_ARIT, 0); }
+		public ITerminalNode OP_ARIT() { return GetToken(Team1Parser.OP_ARIT, 0); }
 		public Asignacion_sumaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_asignacion_suma; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterAsignacion_suma(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitAsignacion_suma(this);
 		}
 	}
@@ -503,29 +503,29 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Ciclo_loopContext : ParserRuleContext {
-		public ITerminalNode LOOP() { return GetToken(BecasParser.LOOP, 0); }
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
-		public ITerminalNode IN() { return GetToken(BecasParser.IN, 0); }
-		public ITerminalNode RANGE() { return GetToken(BecasParser.RANGE, 0); }
-		public ITerminalNode PARENT_I() { return GetToken(BecasParser.PARENT_I, 0); }
-		public ITerminalNode INT() { return GetToken(BecasParser.INT, 0); }
-		public ITerminalNode PARENT_D() { return GetToken(BecasParser.PARENT_D, 0); }
-		public ITerminalNode COLON() { return GetToken(BecasParser.COLON, 0); }
+		public ITerminalNode LOOP() { return GetToken(Team1Parser.LOOP, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
+		public ITerminalNode IN() { return GetToken(Team1Parser.IN, 0); }
+		public ITerminalNode RANGE() { return GetToken(Team1Parser.RANGE, 0); }
+		public ITerminalNode PARENT_I() { return GetToken(Team1Parser.PARENT_I, 0); }
+		public ITerminalNode INT() { return GetToken(Team1Parser.INT, 0); }
+		public ITerminalNode PARENT_D() { return GetToken(Team1Parser.PARENT_D, 0); }
+		public ITerminalNode COLON() { return GetToken(Team1Parser.COLON, 0); }
 		public InstruccionesContext instrucciones() {
 			return GetRuleContext<InstruccionesContext>(0);
 		}
-		public ITerminalNode END_LOOP() { return GetToken(BecasParser.END_LOOP, 0); }
+		public ITerminalNode END_LOOP() { return GetToken(Team1Parser.END_LOOP, 0); }
 		public Ciclo_loopContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_ciclo_loop; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterCiclo_loop(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitCiclo_loop(this);
 		}
 	}
@@ -561,22 +561,22 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Check_blockContext : ParserRuleContext {
-		public ITerminalNode CHECK() { return GetToken(BecasParser.CHECK, 0); }
-		public ITerminalNode[] COLON() { return GetTokens(BecasParser.COLON); }
+		public ITerminalNode CHECK() { return GetToken(Team1Parser.CHECK, 0); }
+		public ITerminalNode[] COLON() { return GetTokens(Team1Parser.COLON); }
 		public ITerminalNode COLON(int i) {
-			return GetToken(BecasParser.COLON, i);
+			return GetToken(Team1Parser.COLON, i);
 		}
-		public ITerminalNode IF() { return GetToken(BecasParser.IF, 0); }
-		public ITerminalNode PARENT_I() { return GetToken(BecasParser.PARENT_I, 0); }
+		public ITerminalNode IF() { return GetToken(Team1Parser.IF, 0); }
+		public ITerminalNode PARENT_I() { return GetToken(Team1Parser.PARENT_I, 0); }
 		public CondicionContext condicion() {
 			return GetRuleContext<CondicionContext>(0);
 		}
-		public ITerminalNode PARENT_D() { return GetToken(BecasParser.PARENT_D, 0); }
-		public ITerminalNode SO() { return GetToken(BecasParser.SO, 0); }
+		public ITerminalNode PARENT_D() { return GetToken(Team1Parser.PARENT_D, 0); }
+		public ITerminalNode SO() { return GetToken(Team1Parser.SO, 0); }
 		public InstruccionesContext instrucciones() {
 			return GetRuleContext<InstruccionesContext>(0);
 		}
-		public ITerminalNode END_CHECK() { return GetToken(BecasParser.END_CHECK, 0); }
+		public ITerminalNode END_CHECK() { return GetToken(Team1Parser.END_CHECK, 0); }
 		public Elseif_bloqueContext[] elseif_bloque() {
 			return GetRuleContexts<Elseif_bloqueContext>();
 		}
@@ -592,11 +592,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_check_block; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterCheck_block(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitCheck_block(this);
 		}
 	}
@@ -655,14 +655,14 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Elseif_bloqueContext : ParserRuleContext {
-		public ITerminalNode ELSEIF() { return GetToken(BecasParser.ELSEIF, 0); }
-		public ITerminalNode PARENT_I() { return GetToken(BecasParser.PARENT_I, 0); }
+		public ITerminalNode ELSEIF() { return GetToken(Team1Parser.ELSEIF, 0); }
+		public ITerminalNode PARENT_I() { return GetToken(Team1Parser.PARENT_I, 0); }
 		public CondicionContext condicion() {
 			return GetRuleContext<CondicionContext>(0);
 		}
-		public ITerminalNode PARENT_D() { return GetToken(BecasParser.PARENT_D, 0); }
-		public ITerminalNode SO() { return GetToken(BecasParser.SO, 0); }
-		public ITerminalNode COLON() { return GetToken(BecasParser.COLON, 0); }
+		public ITerminalNode PARENT_D() { return GetToken(Team1Parser.PARENT_D, 0); }
+		public ITerminalNode SO() { return GetToken(Team1Parser.SO, 0); }
+		public ITerminalNode COLON() { return GetToken(Team1Parser.COLON, 0); }
 		public InstruccionesContext instrucciones() {
 			return GetRuleContext<InstruccionesContext>(0);
 		}
@@ -672,11 +672,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_elseif_bloque; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterElseif_bloque(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitElseif_bloque(this);
 		}
 	}
@@ -709,8 +709,8 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Else_bloqueContext : ParserRuleContext {
-		public ITerminalNode ELSE() { return GetToken(BecasParser.ELSE, 0); }
-		public ITerminalNode COLON() { return GetToken(BecasParser.COLON, 0); }
+		public ITerminalNode ELSE() { return GetToken(Team1Parser.ELSE, 0); }
+		public ITerminalNode COLON() { return GetToken(Team1Parser.COLON, 0); }
 		public InstruccionesContext instrucciones() {
 			return GetRuleContext<InstruccionesContext>(0);
 		}
@@ -720,11 +720,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_else_bloque; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterElse_bloque(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitElse_bloque(this);
 		}
 	}
@@ -762,11 +762,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_condicion; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterCondicion(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitCondicion(this);
 		}
 	}
@@ -799,9 +799,9 @@ public partial class BecasParser : Parser {
 		public And_condContext and_cond(int i) {
 			return GetRuleContext<And_condContext>(i);
 		}
-		public ITerminalNode[] OP_OR() { return GetTokens(BecasParser.OP_OR); }
+		public ITerminalNode[] OP_OR() { return GetTokens(Team1Parser.OP_OR); }
 		public ITerminalNode OP_OR(int i) {
-			return GetToken(BecasParser.OP_OR, i);
+			return GetToken(Team1Parser.OP_OR, i);
 		}
 		public Or_condContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -809,11 +809,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_or_cond; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterOr_cond(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitOr_cond(this);
 		}
 	}
@@ -861,9 +861,9 @@ public partial class BecasParser : Parser {
 		public Not_condContext not_cond(int i) {
 			return GetRuleContext<Not_condContext>(i);
 		}
-		public ITerminalNode[] OP_AND() { return GetTokens(BecasParser.OP_AND); }
+		public ITerminalNode[] OP_AND() { return GetTokens(Team1Parser.OP_AND); }
 		public ITerminalNode OP_AND(int i) {
-			return GetToken(BecasParser.OP_AND, i);
+			return GetToken(Team1Parser.OP_AND, i);
 		}
 		public And_condContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -871,11 +871,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_and_cond; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterAnd_cond(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitAnd_cond(this);
 		}
 	}
@@ -917,15 +917,15 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Not_condContext : ParserRuleContext {
-		public ITerminalNode OP_NOT() { return GetToken(BecasParser.OP_NOT, 0); }
+		public ITerminalNode OP_NOT() { return GetToken(Team1Parser.OP_NOT, 0); }
 		public Not_condContext not_cond() {
 			return GetRuleContext<Not_condContext>(0);
 		}
-		public ITerminalNode PARENT_I() { return GetToken(BecasParser.PARENT_I, 0); }
+		public ITerminalNode PARENT_I() { return GetToken(Team1Parser.PARENT_I, 0); }
 		public CondicionContext condicion() {
 			return GetRuleContext<CondicionContext>(0);
 		}
-		public ITerminalNode PARENT_D() { return GetToken(BecasParser.PARENT_D, 0); }
+		public ITerminalNode PARENT_D() { return GetToken(Team1Parser.PARENT_D, 0); }
 		public ComparacionContext comparacion() {
 			return GetRuleContext<ComparacionContext>(0);
 		}
@@ -935,11 +935,11 @@ public partial class BecasParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_not_cond; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterNot_cond(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitNot_cond(this);
 		}
 	}
@@ -997,18 +997,18 @@ public partial class BecasParser : Parser {
 		public ExpContext exp(int i) {
 			return GetRuleContext<ExpContext>(i);
 		}
-		public ITerminalNode OP_REL() { return GetToken(BecasParser.OP_REL, 0); }
+		public ITerminalNode OP_REL() { return GetToken(Team1Parser.OP_REL, 0); }
 		public ComparacionContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_comparacion; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterComparacion(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitComparacion(this);
 		}
 	}
@@ -1037,20 +1037,20 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class ExpContext : ParserRuleContext {
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
-		public ITerminalNode INT() { return GetToken(BecasParser.INT, 0); }
-		public ITerminalNode FLOAT() { return GetToken(BecasParser.FLOAT, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
+		public ITerminalNode INT() { return GetToken(Team1Parser.INT, 0); }
+		public ITerminalNode FLOAT() { return GetToken(Team1Parser.FLOAT, 0); }
 		public ExpContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_exp; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterExp(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitExp(this);
 		}
 	}
@@ -1086,19 +1086,19 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class NumeroContext : ParserRuleContext {
-		public ITerminalNode INT() { return GetToken(BecasParser.INT, 0); }
-		public ITerminalNode FLOAT() { return GetToken(BecasParser.FLOAT, 0); }
+		public ITerminalNode INT() { return GetToken(Team1Parser.INT, 0); }
+		public ITerminalNode FLOAT() { return GetToken(Team1Parser.FLOAT, 0); }
 		public NumeroContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_numero; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterNumero(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitNumero(this);
 		}
 	}
@@ -1134,21 +1134,21 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class Valor_salidaContext : ParserRuleContext {
-		public ITerminalNode STRING() { return GetToken(BecasParser.STRING, 0); }
-		public ITerminalNode ID() { return GetToken(BecasParser.ID, 0); }
-		public ITerminalNode INT() { return GetToken(BecasParser.INT, 0); }
-		public ITerminalNode FLOAT() { return GetToken(BecasParser.FLOAT, 0); }
+		public ITerminalNode STRING() { return GetToken(Team1Parser.STRING, 0); }
+		public ITerminalNode ID() { return GetToken(Team1Parser.ID, 0); }
+		public ITerminalNode INT() { return GetToken(Team1Parser.INT, 0); }
+		public ITerminalNode FLOAT() { return GetToken(Team1Parser.FLOAT, 0); }
 		public Valor_salidaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_valor_salida; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterValor_salida(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitValor_salida(this);
 		}
 	}
@@ -1184,25 +1184,25 @@ public partial class BecasParser : Parser {
 	}
 
 	public partial class SalidaContext : ParserRuleContext {
-		public ITerminalNode OUT() { return GetToken(BecasParser.OUT, 0); }
+		public ITerminalNode OUT() { return GetToken(Team1Parser.OUT, 0); }
 		public Valor_salidaContext[] valor_salida() {
 			return GetRuleContexts<Valor_salidaContext>();
 		}
 		public Valor_salidaContext valor_salida(int i) {
 			return GetRuleContext<Valor_salidaContext>(i);
 		}
-		public ITerminalNode OP_ARIT() { return GetToken(BecasParser.OP_ARIT, 0); }
+		public ITerminalNode OP_ARIT() { return GetToken(Team1Parser.OP_ARIT, 0); }
 		public SalidaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_salida; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.EnterSalida(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IBecasParserListener typedListener = listener as IBecasParserListener;
+			ITeam1ParserListener typedListener = listener as ITeam1ParserListener;
 			if (typedListener != null) typedListener.ExitSalida(this);
 		}
 	}

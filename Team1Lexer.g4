@@ -1,4 +1,4 @@
-lexer grammar BecasLexer;
+lexer grammar Team1Lexer;
 
 // El lexer divide el texto del programa en palabras y simbolos que el parser pueda entender.
 

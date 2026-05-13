@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from BecasParser.g4 by ANTLR 4.7.2
+// Generated from Team1Parser.g4 by ANTLR 4.7.2
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -27,253 +27,253 @@ using IToken = Antlr4.Runtime.IToken;
 using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 
 /// <summary>
-/// This class provides an empty implementation of <see cref="IBecasParserListener"/>,
+/// This class provides an empty implementation of <see cref="ITeam1ParserListener"/>,
 /// which can be extended to create a listener which only needs to handle a subset
 /// of the available methods.
 /// </summary>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.2")]
 [System.CLSCompliant(false)]
-public partial class BecasParserBaseListener : IBecasParserListener {
+public partial class Team1ParserBaseListener : ITeam1ParserListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.start_rule"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.start_rule"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStart_rule([NotNull] BecasParser.Start_ruleContext context) { }
+	public virtual void EnterStart_rule([NotNull] Team1Parser.Start_ruleContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.start_rule"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.start_rule"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStart_rule([NotNull] BecasParser.Start_ruleContext context) { }
+	public virtual void ExitStart_rule([NotNull] Team1Parser.Start_ruleContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.instrucciones"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.instrucciones"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInstrucciones([NotNull] BecasParser.InstruccionesContext context) { }
+	public virtual void EnterInstrucciones([NotNull] Team1Parser.InstruccionesContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.instrucciones"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.instrucciones"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInstrucciones([NotNull] BecasParser.InstruccionesContext context) { }
+	public virtual void ExitInstrucciones([NotNull] Team1Parser.InstruccionesContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.instruccion"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.instruccion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInstruccion([NotNull] BecasParser.InstruccionContext context) { }
+	public virtual void EnterInstruccion([NotNull] Team1Parser.InstruccionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.instruccion"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.instruccion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInstruccion([NotNull] BecasParser.InstruccionContext context) { }
+	public virtual void ExitInstruccion([NotNull] Team1Parser.InstruccionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.var_decl"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.var_decl"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterVar_decl([NotNull] BecasParser.Var_declContext context) { }
+	public virtual void EnterVar_decl([NotNull] Team1Parser.Var_declContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.var_decl"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.var_decl"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitVar_decl([NotNull] BecasParser.Var_declContext context) { }
+	public virtual void ExitVar_decl([NotNull] Team1Parser.Var_declContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.input_datos"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.input_datos"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInput_datos([NotNull] BecasParser.Input_datosContext context) { }
+	public virtual void EnterInput_datos([NotNull] Team1Parser.Input_datosContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.input_datos"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.input_datos"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInput_datos([NotNull] BecasParser.Input_datosContext context) { }
+	public virtual void ExitInput_datos([NotNull] Team1Parser.Input_datosContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.input_usuario"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.input_usuario"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInput_usuario([NotNull] BecasParser.Input_usuarioContext context) { }
+	public virtual void EnterInput_usuario([NotNull] Team1Parser.Input_usuarioContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.input_usuario"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.input_usuario"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInput_usuario([NotNull] BecasParser.Input_usuarioContext context) { }
+	public virtual void ExitInput_usuario([NotNull] Team1Parser.Input_usuarioContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.asignacion_suma"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.asignacion_suma"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAsignacion_suma([NotNull] BecasParser.Asignacion_sumaContext context) { }
+	public virtual void EnterAsignacion_suma([NotNull] Team1Parser.Asignacion_sumaContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.asignacion_suma"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.asignacion_suma"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAsignacion_suma([NotNull] BecasParser.Asignacion_sumaContext context) { }
+	public virtual void ExitAsignacion_suma([NotNull] Team1Parser.Asignacion_sumaContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.ciclo_loop"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.ciclo_loop"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCiclo_loop([NotNull] BecasParser.Ciclo_loopContext context) { }
+	public virtual void EnterCiclo_loop([NotNull] Team1Parser.Ciclo_loopContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.ciclo_loop"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.ciclo_loop"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCiclo_loop([NotNull] BecasParser.Ciclo_loopContext context) { }
+	public virtual void ExitCiclo_loop([NotNull] Team1Parser.Ciclo_loopContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.check_block"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.check_block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCheck_block([NotNull] BecasParser.Check_blockContext context) { }
+	public virtual void EnterCheck_block([NotNull] Team1Parser.Check_blockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.check_block"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.check_block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCheck_block([NotNull] BecasParser.Check_blockContext context) { }
+	public virtual void ExitCheck_block([NotNull] Team1Parser.Check_blockContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.elseif_bloque"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.elseif_bloque"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterElseif_bloque([NotNull] BecasParser.Elseif_bloqueContext context) { }
+	public virtual void EnterElseif_bloque([NotNull] Team1Parser.Elseif_bloqueContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.elseif_bloque"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.elseif_bloque"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitElseif_bloque([NotNull] BecasParser.Elseif_bloqueContext context) { }
+	public virtual void ExitElseif_bloque([NotNull] Team1Parser.Elseif_bloqueContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.else_bloque"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.else_bloque"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterElse_bloque([NotNull] BecasParser.Else_bloqueContext context) { }
+	public virtual void EnterElse_bloque([NotNull] Team1Parser.Else_bloqueContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.else_bloque"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.else_bloque"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitElse_bloque([NotNull] BecasParser.Else_bloqueContext context) { }
+	public virtual void ExitElse_bloque([NotNull] Team1Parser.Else_bloqueContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.condicion"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.condicion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCondicion([NotNull] BecasParser.CondicionContext context) { }
+	public virtual void EnterCondicion([NotNull] Team1Parser.CondicionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.condicion"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.condicion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCondicion([NotNull] BecasParser.CondicionContext context) { }
+	public virtual void ExitCondicion([NotNull] Team1Parser.CondicionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.or_cond"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.or_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterOr_cond([NotNull] BecasParser.Or_condContext context) { }
+	public virtual void EnterOr_cond([NotNull] Team1Parser.Or_condContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.or_cond"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.or_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitOr_cond([NotNull] BecasParser.Or_condContext context) { }
+	public virtual void ExitOr_cond([NotNull] Team1Parser.Or_condContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.and_cond"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.and_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAnd_cond([NotNull] BecasParser.And_condContext context) { }
+	public virtual void EnterAnd_cond([NotNull] Team1Parser.And_condContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.and_cond"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.and_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAnd_cond([NotNull] BecasParser.And_condContext context) { }
+	public virtual void ExitAnd_cond([NotNull] Team1Parser.And_condContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.not_cond"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.not_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterNot_cond([NotNull] BecasParser.Not_condContext context) { }
+	public virtual void EnterNot_cond([NotNull] Team1Parser.Not_condContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.not_cond"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.not_cond"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitNot_cond([NotNull] BecasParser.Not_condContext context) { }
+	public virtual void ExitNot_cond([NotNull] Team1Parser.Not_condContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.comparacion"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.comparacion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterComparacion([NotNull] BecasParser.ComparacionContext context) { }
+	public virtual void EnterComparacion([NotNull] Team1Parser.ComparacionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.comparacion"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.comparacion"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitComparacion([NotNull] BecasParser.ComparacionContext context) { }
+	public virtual void ExitComparacion([NotNull] Team1Parser.ComparacionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.exp"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.exp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExp([NotNull] BecasParser.ExpContext context) { }
+	public virtual void EnterExp([NotNull] Team1Parser.ExpContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.exp"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.exp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExp([NotNull] BecasParser.ExpContext context) { }
+	public virtual void ExitExp([NotNull] Team1Parser.ExpContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.numero"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.numero"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterNumero([NotNull] BecasParser.NumeroContext context) { }
+	public virtual void EnterNumero([NotNull] Team1Parser.NumeroContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.numero"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.numero"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitNumero([NotNull] BecasParser.NumeroContext context) { }
+	public virtual void ExitNumero([NotNull] Team1Parser.NumeroContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.valor_salida"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.valor_salida"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterValor_salida([NotNull] BecasParser.Valor_salidaContext context) { }
+	public virtual void EnterValor_salida([NotNull] Team1Parser.Valor_salidaContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.valor_salida"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.valor_salida"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitValor_salida([NotNull] BecasParser.Valor_salidaContext context) { }
+	public virtual void ExitValor_salida([NotNull] Team1Parser.Valor_salidaContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="BecasParser.salida"/>.
+	/// Enter a parse tree produced by <see cref="Team1Parser.salida"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSalida([NotNull] BecasParser.SalidaContext context) { }
+	public virtual void EnterSalida([NotNull] Team1Parser.SalidaContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="BecasParser.salida"/>.
+	/// Exit a parse tree produced by <see cref="Team1Parser.salida"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSalida([NotNull] BecasParser.SalidaContext context) { }
+	public virtual void ExitSalida([NotNull] Team1Parser.SalidaContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

@@ -1,7 +1,7 @@
-# Proyecto Becas
+# Team1
 Créditos a Iván por elaborar la base y esqueleto del Lexer.
 
-Lenguaje sencillo para probar reglas de becas con variables, ciclos, condiciones, entrada de datos y salidas por consola.
+Lenguaje sencillo del Equipo 1 para probar reglas con variables, ciclos, condiciones, entrada de datos y salidas por consola.
 
 ## Requisitos
 
@@ -39,53 +39,55 @@ El script revisa si tienes `dotnet` y `java`, restaura paquetes de NuGet y muest
 ## Ejecutar el programa
 
 ```bash
-dotnet run --project BecasApp/BecasApp.csproj -- codigo.becas
+dotnet run --project Team1App/Team1App.csproj -- codigo.team1
 ```
 
-El archivo [codigo.becas](codigo.becas) contiene el programa que se va a analizar.
+El archivo [codigo.team1](codigo.team1) contiene el programa que se va a analizar.
 
-Al ejecutar el proyecto se muestran estos apartados de analisis:
+Al ejecutar el proyecto se muestran las tres fases principales de analisis:
 
-- `ANALISIS LEXICO`: muestra los tokens encontrados, con linea, columna, tipo de token y texto.
-- `GRAMATICA`: muestra la gramatica formal `G = (N, T, P, S)` con no terminales, terminales, simbolo inicial y producciones.
-- `ANALISIS SINTACTICO DESCENDENTE`: muestra una tabla con `Entrada`, `Pila` y `Regla`, similar al analisis hecho a mano.
-- `ARBOL DE DERIVACION`: aparece dentro del analisis sintactico y resume la estructura del programa por reglas.
-- `ANALISIS SEMANTICO`: revisa declaraciones, variables, entradas, salidas, sumas y comparaciones.
+- `FASE 1: ANALISIS LEXICO`: muestra los tokens encontrados, con linea, columna, tipo de token y lexema.
+- `FASE 2: ANALISIS SINTACTICO`: muestra la gramatica propuesta, la regla inicial aceptada por ANTLR y las instrucciones reconocidas.
+- `FASE 3: ANALISIS SEMANTICO`: construye tabla de simbolos y valida existencia de variables y compatibilidad de tipos.
 
 El proyecto no ejecuta la logica del programa al final; solo muestra los analisis solicitados.
 
 Ejemplo de salida:
 
 ```text
-========== ANALISIS LEXICO ==========
-Linea  1, Columna  0 | START        | STAR
-Linea  2, Columna  0 | VAR          | VAR
-Linea  2, Columna  4 | ID           | aceptados
+Fase 1 - Analisis lexico
+Resultado del analisis lexico
+[L:1, C:1] Token: STAR       | Valor: STAR
+[L:4, C:1] Token: VAR        | Valor: VAR
+[L:4, C:5] Token: ID         | Valor: aceptados
 
-========== GRAMATICA ==========
->>> [EXITO]: El codigo cumple con la gramatica.
-G = (N, T, P, S)
+Fase 2 - Analisis sintactico
+Gramatica
 S = start_rule
 1. start_rule -> START instrucciones END
 
-========== ANALISIS SINTACTICO DESCENDENTE ==========
-Entrada              | Pila                          | Regla
-START var_decl END   | start_rule                    | start_rule -> START instrucciones END
-var_decl END         | instrucciones END             | consume START
-END                  | END                           | instrucciones -> epsilon
+Resultado ANTLR
+Regla inicial: start_rule
+Estado: cadena aceptada
 
-Arbol de derivacion:
-start_rule
-|-- START
-|-- instrucciones
-|   `-- var_decl [VAR aceptados = 0]
-`-- END
+Instrucciones reconocidas
+- var_decl: VAR aceptados, rechazado_edad, rechazado_prom, rechazado_ingreso = 0
+- ciclo_loop: LOOP i IN range (5)
+- salida: OUT "Total: " + aceptados
 
-========== ANALISIS SEMANTICO ==========
-Declaracion valida: aceptados, rechazado_edad, rechazado_prom, rechazado_ingreso = 0
-Resultado: analisis semantico correcto.
+Fase 3 - Analisis semantico
+Tabla de simbolos
+Nombre                 | Tipo   | Origen
+aceptados              | number | VAR
+edad                   | number | INPUT
 
->>> Analisis finalizado. No se ejecuta el programa; solo se muestran las fases de analisis.
+Validaciones semanticas
+aceptados = aceptados + 1 -> destino: OK, tipos: OK
+edad <= 18 -> tipos compatibles: OK
+
+Semantica: correcta.
+
+Resultado final: codigo valido.
 ```
 
 ## Ejemplo de codigo
@@ -175,7 +177,7 @@ Estos valores se reconocen en el analisis lexico como `INT` o `FLOAT`.
 
 ### Analisis lexico
 
-El lexer esta definido en [BecasLexer.g4](BecasLexer.g4). Convierte el codigo fuente en tokens como:
+El lexer esta definido en [Team1Lexer.g4](Team1Lexer.g4). Convierte el codigo fuente en tokens como:
 
 - Palabras reservadas: `STAR`, `START`, `END`, `VAR`, `LOOP`, `CHECK`, `IF`, `ELSEIF`, `ELSE`, `OUT`, `INPUT`.
 - Identificadores: nombres de variables como `edad`, `promedio` o `aceptados`.
@@ -185,7 +187,7 @@ El lexer esta definido en [BecasLexer.g4](BecasLexer.g4). Convierte el codigo fu
 
 ### Analisis sintactico y gramatica
 
-La gramatica esta definida en [BecasParser.g4](BecasParser.g4). La regla principal es:
+La gramatica esta definida en [Team1Parser.g4](Team1Parser.g4). La regla principal es:
 
 ```antlr
 start_rule : START instrucciones END ;
@@ -206,27 +208,53 @@ salida        : OUT valor_salida (OP_ARIT valor_salida)? ;
 
 ### Analisis semantico
 
-El analisis semantico esta implementado en [BecasSemanticAnalyzer.cs](BecasApp/BecasSemanticAnalyzer.cs). Revisa que el programa tenga sentido antes de dar el analisis por correcto:
+El analisis semantico esta implementado en [Team1SemanticAnalyzer.cs](Team1App/Team1SemanticAnalyzer.cs). Esta fase revisa significado, no solo forma.
 
-- Las variables declaradas se registran en una tabla de simbolos.
-- Las variables usadas en salidas, sumas y comparaciones deben tener un valor previo.
-- Las entradas `INPUT` guardan valores numericos.
-- Las sumas trabajan con expresiones numericas.
-- Las condiciones usan comparaciones validas con `<=` o `>=`.
-- Si hay errores semanticos, el programa los muestra.
+Paso 1: tabla de simbolos.
+
+```text
+Nombre            | Tipo   | Origen
+aceptados         | number | VAR
+edad              | number | INPUT
+```
+
+Paso 2: validaciones semanticas.
+
+- Si una variable se declara con `VAR`, se agrega a la tabla de simbolos.
+- Si una variable viene de `INPUT`, se registra como dato numerico de entrada.
+- Si una variable se usa en suma, salida o condicion, debe existir en la tabla.
+- Las sumas y comparaciones deben usar valores `number`.
+- Si una variable no existe, se reporta error semantico.
+
+Ejemplo de error semantico:
+
+```text
+STAR
+a = 5
+END
+```
+
+Salida esperada:
+
+```text
+a = 5 -> existe: ERROR, tipo: ERROR
+ERROR: a no fue declarado.
+Semantica: con errores.
+Resultado final: codigo no valido.
+```
 
 ## Regenerar ANTLR
 
-Si modificas [BecasLexer.g4](BecasLexer.g4) o [BecasParser.g4](BecasParser.g4), regenera los archivos C# con:
+Si modificas [Team1Lexer.g4](Team1Lexer.g4) o [Team1Parser.g4](Team1Parser.g4), regenera los archivos C# con:
 
 ```bash
-java -jar antlr-4.7.2-complete.jar -Dlanguage=CSharp -o BecasApp BecasLexer.g4 BecasParser.g4
+java -jar antlr-4.7.2-complete.jar -Dlanguage=CSharp -o Team1App Team1Lexer.g4 Team1Parser.g4
 ```
 
 Despues ejecuta de nuevo:
 
 ```bash
-dotnet run --project BecasApp/BecasApp.csproj -- codigo.becas
+dotnet run --project Team1App/Team1App.csproj -- codigo.team1
 ```
 
 ## Problemas comunes

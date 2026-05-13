@@ -1,5 +1,5 @@
-parser grammar BecasParser;
-options { tokenVocab=BecasLexer; }
+parser grammar Team1Parser;
+options { tokenVocab=Team1Lexer; }
 
 // Programa completo: debe iniciar con STAR/START y terminar con END.
 start_rule : START instrucciones END ;

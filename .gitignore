@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+**/bin/
+**/obj/
+
+# .NET temporary files
+*.user
+*.suo
+*.cache
+
+# ANTLR local cache
+.antlr/
+
+# Generated analysis/export files
+arbol_sintactico.*
+analisis_*.txt
+
+# OS files
+.DS_Store
