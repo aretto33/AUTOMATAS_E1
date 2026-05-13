@@ -1,7 +1,7 @@
 # Team1
 Créditos a Iván por elaborar la base y esqueleto del Lexer.
 
-Lenguaje sencillo del Equipo 1 para probar reglas con variables, ciclos, condiciones, entrada de datos y salidas por consola.
+Lenguaje sencillo del Equipo 1 para practicar las fases de analisis de un lenguaje: lexico, sintactico y semantico. El ejemplo usa variables, ciclos, condiciones, entrada de datos y salidas por consola.
 
 ## Requisitos
 
@@ -36,6 +36,18 @@ chmod +x instalar.sh
 
 El script revisa si tienes `dotnet` y `java`, restaura paquetes de NuGet y muestra el comando para analizar el programa.
 
+## Nota sobre ANTLR
+
+ANTLR no es el proyecto completo ni reemplaza el analisis que presentamos. En nuestro caso es una herramienta de apoyo:
+
+- Con `Team1Lexer.g4` definimos nosotros los tokens del lenguaje.
+- Con `Team1Parser.g4` definimos nosotros la gramatica.
+- ANTLR toma esas reglas y genera clases en C# para leer el codigo.
+- El programa de consola acomoda la salida para mostrar las fases de forma entendible.
+- El analisis semantico lo revisamos en `Team1SemanticAnalyzer.cs`, donde se construye la tabla de simbolos y se validan variables y tipos.
+
+Por eso el proyecto muestra las tres fases, aunque ANTLR solo se use como herramienta para ayudar en la parte lexica y sintactica.
+
 ## Ejecutar el programa
 
 ```bash
@@ -47,7 +59,7 @@ El archivo [codigo.team1](codigo.team1) contiene el programa que se va a analiza
 Al ejecutar el proyecto se muestran las tres fases principales de analisis:
 
 - `FASE 1: ANALISIS LEXICO`: muestra los tokens encontrados, con linea, columna, tipo de token y lexema.
-- `FASE 2: ANALISIS SINTACTICO`: muestra la gramatica propuesta, la regla inicial aceptada por ANTLR y las instrucciones reconocidas.
+- `FASE 2: ANALISIS SINTACTICO`: muestra la gramatica propuesta, la regla inicial aceptada y las instrucciones reconocidas.
 - `FASE 3: ANALISIS SEMANTICO`: construye tabla de simbolos y valida existencia de variables y compatibilidad de tipos.
 
 El proyecto no ejecuta la logica del programa al final; solo muestra los analisis solicitados.
@@ -66,9 +78,10 @@ Gramatica
 S = start_rule
 1. start_rule -> START instrucciones END
 
-Resultado ANTLR
+Resultado sintactico
 Regla inicial: start_rule
 Estado: cadena aceptada
+Herramienta usada: ANTLR, a partir de nuestra gramatica
 
 Instrucciones reconocidas
 - var_decl: VAR aceptados, rechazado_edad, rechazado_prom, rechazado_ingreso = 0
@@ -177,7 +190,7 @@ Estos valores se reconocen en el analisis lexico como `INT` o `FLOAT`.
 
 ### Analisis lexico
 
-El lexer esta definido en [Team1Lexer.g4](Team1Lexer.g4). Convierte el codigo fuente en tokens como:
+El lexer esta definido en [Team1Lexer.g4](Team1Lexer.g4). En esa gramatica escribimos que palabras y simbolos reconoce el lenguaje. Al correr el programa, el codigo fuente se separa en tokens como:
 
 - Palabras reservadas: `STAR`, `START`, `END`, `VAR`, `LOOP`, `CHECK`, `IF`, `ELSEIF`, `ELSE`, `OUT`, `INPUT`.
 - Identificadores: nombres de variables como `edad`, `promedio` o `aceptados`.
@@ -187,7 +200,7 @@ El lexer esta definido en [Team1Lexer.g4](Team1Lexer.g4). Convierte el codigo fu
 
 ### Analisis sintactico y gramatica
 
-La gramatica esta definida en [Team1Parser.g4](Team1Parser.g4). La regla principal es:
+La gramatica esta definida en [Team1Parser.g4](Team1Parser.g4). ANTLR nos ayuda a comprobar si el orden de los tokens cumple estas reglas. La regla principal es:
 
 ```antlr
 start_rule : START instrucciones END ;
@@ -208,7 +221,7 @@ salida        : OUT valor_salida (OP_ARIT valor_salida)? ;
 
 ### Analisis semantico
 
-El analisis semantico esta implementado en [Team1SemanticAnalyzer.cs](Team1App/Team1SemanticAnalyzer.cs). Esta fase revisa significado, no solo forma.
+El analisis semantico esta implementado por el equipo en [Team1SemanticAnalyzer.cs](Team1App/Team1SemanticAnalyzer.cs). Esta fase revisa significado, no solo forma. Por ejemplo: que una variable exista antes de usarse y que las operaciones se hagan con valores numericos.
 
 Paso 1: tabla de simbolos.
 

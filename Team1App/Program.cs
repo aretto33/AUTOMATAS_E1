@@ -10,8 +10,7 @@ namespace Team1App
     {
         static void Main(string[] args)
         {
-            // Si se pasa un archivo en la terminal, analiza ese archivo.
-            // Si no se pasa nada, usa el ejemplo incluido abajo.
+            // Usamos el archivo recibido por consola; si no llega uno, queda un ejemplo base.
             string input = args.Length > 0
                 ? File.ReadAllText(args[0])
                 : @"STAR
@@ -121,9 +120,10 @@ END";
             Console.WriteLine("Gramatica");
             PrintGrammar();
             Console.WriteLine();
-            Console.WriteLine("Resultado ANTLR");
+            Console.WriteLine("Resultado sintactico");
             Console.WriteLine("Regla inicial: start_rule");
             Console.WriteLine("Estado: cadena aceptada");
+            Console.WriteLine("Herramienta usada: ANTLR, a partir de nuestra gramatica");
             Console.WriteLine();
             Console.WriteLine("Instrucciones reconocidas");
 

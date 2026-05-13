@@ -1,8 +1,8 @@
 lexer grammar Team1Lexer;
 
-// El lexer divide el texto del programa en palabras y simbolos que el parser pueda entender.
+// Tokens que reconoce nuestro lenguaje.
 
-// Palabras reservadas del lenguaje.
+// Palabras reservadas.
 START : 'START' | 'STAR' ;
 END : 'END' ;
 VAR : 'VAR' ;
@@ -19,7 +19,7 @@ END_LOOP : 'END_LOOP' ;
 OUT : 'OUT' ;
 INPUT : 'INPUT' ;
 
-// Operadores para asignaciones, sumas, comparaciones y condiciones logicas.
+// Operadores.
 OP_ASIG : '=' ;
 OP_ARIT : '+' ;
 OP_REL : '<=' | '>=' ;
@@ -31,12 +31,12 @@ PARENT_D : ')' ;
 COLON : ':' ;
 COMMA : ',' ;
 
-// Valores basicos: nombres de variables, enteros, decimales y textos entre comillas.
+// Valores basicos.
 ID : [a-zA-Z_][a-zA-Z0-9_]* ;
 FLOAT : '-'? [0-9]+ '.' [0-9]+ ;
 INT : '-'? [0-9]+ ;
 STRING : '"' .*? '"' ;
 
-// Los comentarios y espacios se ignoran para que no afecten la sintaxis.
+// Se omiten comentarios y espacios.
 COMMENT : '//' .*? '\n' -> skip ;
 WS : [ \t\r\n]+ -> skip ;
