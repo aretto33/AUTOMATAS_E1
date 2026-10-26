@@ -2,7 +2,7 @@ STAR
 
 //crear variables de los contadores
 VAR aceptados, rechazado_edad, rechazado_prom, rechazado_ingreso = 0
-VAR promedio_minimo = 70.5
+VAR promedio_minimo = -70.5
 
 LOOP i IN range (5):
     OUT "Bienvenido alumno No." + i

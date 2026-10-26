@@ -54,7 +54,7 @@ ANTLR no es el proyecto completo ni reemplaza el analisis que presentamos. En nu
 - El programa de consola acomoda la salida para mostrar las fases de forma entendible.
 - El analisis semantico lo revisamos en `Team1SemanticAnalyzer.cs`, donde se construye la tabla de simbolos y se validan variables y tipos.
 
-Por eso el proyecto muestra las tres fases, aunque ANTLR solo se use como herramienta para ayudar en la parte lexica y sintactica.
+Por eso el proyecto muestra por ahora las dos primeras fases, aunque ANTLR solo se use como herramienta para ayudar en la parte lexica y sintactica.
 
 ## Ejecutar el programa
 
@@ -64,13 +64,12 @@ dotnet run --project Team1App/Team1App.csproj -- codigo.team1
 
 El archivo [codigo.team1](codigo.team1) contiene el programa que se va a analizar.
 
-Al ejecutar el proyecto se muestran las tres fases principales de analisis:
+Al ejecutar el proyecto se muestran las dos primeras fases del analisis:
 
 - `FASE 1: ANALISIS LEXICO`: muestra los tokens encontrados, con linea, columna, tipo de token y lexema.
-- `FASE 2: ANALISIS SINTACTICO`: muestra la gramatica propuesta, la regla inicial aceptada y las instrucciones reconocidas.
-- `FASE 3: ANALISIS SEMANTICO`: construye tabla de simbolos y valida existencia de variables y compatibilidad de tipos.
+- `FASE 2: ANALISIS SINTACTICO`: muestra la gramatica propuesta, valida el orden de los tokens segun las reglas, imprime el arbol sintactico generado por ANTLR y lista las instrucciones reconocidas.
 
-El proyecto no ejecuta la logica del programa al final; solo muestra los analisis solicitados.
+Por ahora el proyecto no muestra la fase semantica ni ejecuta la logica del programa; solo muestra los dos analisis solicitados.
 
 Ejemplo de salida:
 
@@ -91,24 +90,18 @@ Regla inicial: start_rule
 Estado: cadena aceptada
 Herramienta usada: ANTLR, a partir de nuestra gramatica
 
+Arbol sintactico
+\- start_rule
+   |- 'STAR'
+   |- instrucciones
+   |  \- instruccion
+   |     \- var_decl
+   \- 'END'
+
 Instrucciones reconocidas
 - var_decl: VAR aceptados, rechazado_edad, rechazado_prom, rechazado_ingreso = 0
 - ciclo_loop: LOOP i IN range (5)
 - salida: OUT "Total: " + aceptados
-
-Fase 3 - Analisis semantico
-Tabla de simbolos
-Nombre                 | Tipo   | Origen
-aceptados              | number | VAR
-edad                   | number | INPUT
-
-Validaciones semanticas
-aceptados = aceptados + 1 -> destino: OK, tipos: OK
-edad <= 18 -> tipos compatibles: OK
-
-Semantica: correcta.
-
-Resultado final: codigo valido.
 ```
 
 ## Ejemplo de codigo
@@ -227,7 +220,7 @@ check_block   : CHECK COLON IF PARENT_I condicion PARENT_D SO COLON instruccione
 salida        : OUT valor_salida (OP_ARIT valor_salida)? ;
 ```
 
-### Analisis semantico
+### Analisis semantico (no mostrado por ahora)
 
 El analisis semantico esta implementado por el equipo en [Team1SemanticAnalyzer.cs](Team1App/Team1SemanticAnalyzer.cs). Esta fase revisa significado, no solo forma. Por ejemplo: que una variable exista antes de usarse y que las operaciones se hagan con valores numericos.
 

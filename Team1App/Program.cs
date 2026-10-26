@@ -62,18 +62,7 @@ END";
                     return;
                 }
 
-                PrintSyntacticAnalysis(program);
-
-                Console.WriteLine();
-                Console.WriteLine("Fase 3 - Analisis semantico");
-                var semanticAnalyzer = new Team1SemanticAnalyzer();
-                var semanticResult = semanticAnalyzer.Analyze(program);
-                Console.WriteLine(semanticResult.Report);
-
-                Console.WriteLine();
-                Console.WriteLine(semanticResult.IsValid
-                    ? "Resultado final: codigo valido."
-                    : "Resultado final: codigo no valido.");
+                PrintSyntacticAnalysis(program, parser);
             }
             catch (Exception ex)
             {
@@ -115,7 +104,9 @@ END";
             Console.WriteLine($"[L:{line}, C:{column}] Token: {tokenName,-10} | Valor: {value}");
         }
 
-        private static void PrintSyntacticAnalysis(Team1Parser.Start_ruleContext program)
+        private static void PrintSyntacticAnalysis(
+            Team1Parser.Start_ruleContext program,
+            Team1Parser parser)
         {
             Console.WriteLine("Gramatica");
             PrintGrammar();
@@ -124,6 +115,9 @@ END";
             Console.WriteLine("Regla inicial: start_rule");
             Console.WriteLine("Estado: cadena aceptada");
             Console.WriteLine("Herramienta usada: ANTLR, a partir de nuestra gramatica");
+            Console.WriteLine();
+            Console.WriteLine("Arbol sintactico");
+            PrintParseTree(program, parser, string.Empty, true);
             Console.WriteLine();
             Console.WriteLine("Instrucciones reconocidas");
 
@@ -134,11 +128,31 @@ END";
             }
         }
 
+        private static void PrintParseTree(
+            IParseTree tree,
+            Team1Parser parser,
+            string indent,
+            bool isLast)
+        {
+            string branch = isLast ? "\\- " : "|- ";
+            string label = tree is ITerminalNode
+                ? $"'{tree.GetText()}'"
+                : parser.RuleNames[((ParserRuleContext)tree).RuleIndex];
+
+            Console.WriteLine($"{indent}{branch}{label}");
+
+            string childIndent = indent + (isLast ? "   " : "|  ");
+            for (int i = 0; i < tree.ChildCount; i++)
+            {
+                PrintParseTree(tree.GetChild(i), parser, childIndent, i == tree.ChildCount - 1);
+            }
+        }
+
         private static void PrintGrammar()
         {
             Console.WriteLine("S = start_rule");
             Console.WriteLine("1.  start_rule      -> START instrucciones END");
-            Console.WriteLine("2.  instrucciones   -> instruccion instrucciones | epsilon");
+            Console.WriteLine("2.  instrucciones   -> instruccion*");
             Console.WriteLine("3.  instruccion     -> var_decl | input_datos | input_usuario | ciclo_loop | check_block | salida | asignacion_suma");
             Console.WriteLine("4.  var_decl        -> VAR ID (, ID)* = numero");
             Console.WriteLine("5.  input_datos     -> ID = numero");
@@ -146,11 +160,14 @@ END";
             Console.WriteLine("7.  asignacion_suma -> ID = exp + exp");
             Console.WriteLine("8.  ciclo_loop      -> LOOP ID IN range ( INT ) : instrucciones END_LOOP");
             Console.WriteLine("9.  check_block     -> CHECK : IF ( condicion ) SO : instrucciones elseif_bloque* else_bloque? END_CHECK");
-            Console.WriteLine("10. condicion       -> comparacion | !condicion | condicion && condicion | condicion || condicion");
-            Console.WriteLine("11. comparacion     -> exp OP_REL exp");
-            Console.WriteLine("12. exp             -> ID | INT | FLOAT");
-            Console.WriteLine("13. numero          -> INT | FLOAT");
-            Console.WriteLine("14. salida          -> OUT valor_salida (+ valor_salida)?");
+            Console.WriteLine("10. condicion       -> or_cond");
+            Console.WriteLine("11. or_cond         -> and_cond ( || and_cond )*");
+            Console.WriteLine("12. and_cond        -> not_cond ( && not_cond )*");
+            Console.WriteLine("13. not_cond        -> !not_cond | ( condicion ) | comparacion");
+            Console.WriteLine("14. comparacion     -> exp OP_REL exp");
+            Console.WriteLine("15. exp             -> ID | INT | FLOAT");
+            Console.WriteLine("16. numero          -> INT | FLOAT");
+            Console.WriteLine("17. salida          -> OUT valor_salida ( + valor_salida)?");
         }
 
         private static List<InstructionNode> BuildInstructionNodes(Team1Parser.InstruccionesContext instructions)
